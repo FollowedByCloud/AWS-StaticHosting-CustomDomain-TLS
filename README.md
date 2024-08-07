@@ -13,7 +13,7 @@ with a custom domain using AWS Route 53 and how I secured the webpage using AWS 
 Click 👉 [Here](https://drive.google.com/drive/folders/1ke68Wl1ANy_0iNMuR602EU-rI0r_W5JP?usp=sharing) 👈 to see these files
 
 ## Create an AWS account and create first bucket
-- **1**: Got to https://aws.amazon.com and create an account. It is free but you'll need to add a card just incase you are billed. Dont worry this tutorial is free.
+- **1**: Got to https://aws.amazon.com and create an account. It is free but you'll need to add a card just incase you are billed.
 - **2**: Navigate to the AWS S3 console. Once here you will need to click "Create Bucket.
 - **3**: Give your bucket a name. To make things easier, this bucket name should be the same as your domain "We'll get into choosing a domain later in this tutorial.Ex: "www.FollowByCloud.com" or "s3.followedbycloud.com"
 - **4**: IMPORTANT!!! Please make sure the region that's selected is the closest region to you. (*Ex. I live in Atlanta so the closest region to me would be "US East N. Virginia*)
@@ -82,3 +82,40 @@ Open up and incognito browser and type in the url you just create and you should
 
 ## Securing you S3 webpage with Cloudfront w/ TLS Cert
 
+Nagivate to Cloudfront console
+
+Once in the console find and click on "Distributions" tab. (*Its should direct you into the distrubutions automatically but if not it will on the lefthand side*)
+
+In "Distributions" tab select the "Create distributions" tab. Under "Origin domain" your bucket should pop up there. Select the correct bucket. Since we are using static website hosting, click on the button that states " Use website endpoint"
+
+Scroll down until you see the "Default cache behavior" section and look under where you see "Viewer" select to rediect HTTP to HTTPS" (* This means if someone tries to enter your webpage using HTTP they will be automactially be redirected to HTTPS and use the TLS cert*)
+
+Leave everything default until you reach the section named "Web Application Firewall (WAP)" make sure to enable this section.
+
+Scroll towards the bottom until you see the "Settings" section
+
+In the "Price class" section I will sugggest using "North America and Europe" for low cost.
+
+Under "Alternate domain name (CNAME)" enter the name of the domain you created. (Will add as a alternaive name when you create the SSL Cert)
+
+Under "Custom SSl certificate" you don't have one yet, so click on "Request certificate" You will be directed to "AWS Certificate Manager (ACM)" console 
+
+select on "Request a public certificate" and click next
+
+Under "Fully qualified domain name" enter the domain you created. Everything else is left as default. Click request.
+
+You will be directed to the "Certificates" page where you will see your certificate ID has a status of "Pending Validation" (*If you dont see your certificate ID refresh the page and it will appear*)
+
+While waiting for the pending valdation you will need to sselect the certificate ID and add your CNAME into the certificate ID. Since we are using "Route 53" we already have a CNAME created. You will see a tab thats named "Create records in Route 53" Select that and it will redirected you to your CNAME that has been created. Select "Create records" You have add your CNAME into certificate ID. 
+
+(*If you want to see that you can head back to the Route 53 console, into Hosted zones, into your domain and you'll see the new CNAME thats been added  *)
+
+(*The Valdiation state will take a while so you can go and get a few things around the house down. Like remove those chip crumbs off your desktop or laptop. 😆😆😆*)
+
+One Amazon has issue the valdiation head back into your distributions and refresh the "Custom SSL certificate" you will see the new certificate thats been created with the domain. Everything else is left as default. Click on "Create Distributions"
+
+Your distributions should be created and your webpage will be secured!! 🎉🎉
+
+Open incoginto and type domain into the address bar, there you will see your webpage up and running with a secure certification!! 
+
+CONGRATS ON COMPLETING THIS TUTORIAL WITH ME!!! 
