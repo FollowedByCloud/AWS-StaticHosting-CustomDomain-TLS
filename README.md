@@ -112,7 +112,7 @@ While waiting for the pending validation you will need to select the certificate
 
 (*The Validation state will take a while so you can go and get a few things around the house down. Like remove those chip crumbs off your desktop or laptop. 😆😆😆*)
 
-One Amazon has issue the validation head back into your distributions and refresh the "Custom SSL certificate" you will see the new certificate thats been created with the domain. Everything else is left as default. Click on "Create Distributions"
+One Amazon has issue the validation head back into your distributions and refresh the "Custom SSL certificate" there you will see the new certificate thats been created with the domain. Everything else is left as default. Click on "Create Distributions"
 
 Your distributions should be created and your webpage will be secured!! 🎉🎉
 
