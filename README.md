@@ -106,13 +106,13 @@ Under "Fully qualified domain name" enter the domain you created. Everything els
 
 You will be directed to the "Certificates" page where you will see your certificate ID has a status of "Pending Validation" (*If you dont see your certificate ID refresh the page and it will appear*)
 
-While waiting for the pending valdation you will need to sselect the certificate ID and add your CNAME into the certificate ID. Since we are using "Route 53" we already have a CNAME created. You will see a tab thats named "Create records in Route 53" Select that and it will redirected you to your CNAME that has been created. Select "Create records" You have add your CNAME into certificate ID. 
+While waiting for the pending validation you will need to select the certificate ID and add your CNAME into the certificate ID. Since we are using "Route 53" we already have a CNAME created. You will see a tab thats named "Create records in Route 53" Select that and it will redirected you to your CNAME that has been created. Select "Create records" You have add your CNAME into certificate ID. 
 
 (*If you want to see that you can head back to the Route 53 console, into Hosted zones, into your domain and you'll see the new CNAME thats been added  *)
 
-(*The Valdiation state will take a while so you can go and get a few things around the house down. Like remove those chip crumbs off your desktop or laptop. 😆😆😆*)
+(*The Validation state will take a while so you can go and get a few things around the house down. Like remove those chip crumbs off your desktop or laptop. 😆😆😆*)
 
-One Amazon has issue the valdiation head back into your distributions and refresh the "Custom SSL certificate" you will see the new certificate thats been created with the domain. Everything else is left as default. Click on "Create Distributions"
+One Amazon has issue the validation head back into your distributions and refresh the "Custom SSL certificate" you will see the new certificate thats been created with the domain. Everything else is left as default. Click on "Create Distributions"
 
 Your distributions should be created and your webpage will be secured!! 🎉🎉
 
